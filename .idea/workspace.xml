@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="use spacy">
+    <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="install libs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -79,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739172976882</updated>
-      <workItem from="1739173022539" duration="1072000" />
+      <workItem from="1739173022539" duration="2168000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -105,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739173881994</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="install libs">
+      <option name="closed" value="true" />
+      <created>1739174251896</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739174251896</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,9 +123,10 @@
     <MESSAGE value="init" />
     <MESSAGE value="read dataset" />
     <MESSAGE value="use spacy" />
-    <option name="LAST_COMMIT_MESSAGE" value="use spacy" />
+    <MESSAGE value="install libs" />
+    <option name="LAST_COMMIT_MESSAGE" value="install libs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739173785470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739175166054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -28,44 +28,4 @@ sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
 sym_spell.load_bigram_dictionary(bigram_path, term_index=0, count_index=2)
 
 
-# Spell Check using Symspell
-def fix_spelling(text):
-    suggestions = sym_spell.lookup_compound(text, max_edit_distance=2)
-    correctedtext = suggestions[
-        0].term  # get the first suggestion, otherwise returns original text if nothing is corrected
-    return correctedtext
 
-
-# Remove some important words from stopwords list
-
-
-for w in deselect_stop_words:
-    nlp.vocab[w].is_stop = False
-
-
-# Remove extra whitespaces from text
-def remove_whitespace(text):
-    text = text.strip()
-    return " ".join(text.split())
-
-
-def remove_accented_chars(text):
-    text = unidecode.unidecode(text)
-    return text
-
-# Remove URL
-def remove_url(text):
-    return re.sub(r'http\S+', '', text)
-
-# Removing symbols and digits
-def remove_symbols_digits(text):
-    return re.sub('[^a-zA-Z\s]', ' ', text)
-
-# Removing special characters
-def remove_special(text):
-    return text.replace("\r", " ").replace("\n", " ").replace("    ", " ").replace('"', '')
-
-# Fix word lengthening (characters are wrongly repeated)
-def fix_lengthening(text):
-    pattern = re.compile(r"(.)\1{2,}")
-    return pattern.sub(r"\1\1", text)

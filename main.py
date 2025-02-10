@@ -33,6 +33,10 @@ def remove_accented_chars(text):
     text = unidecode.unidecode(text)
     return text
 
+# Remove URL
+def remove_url(text):
+    return re.sub(r'http\S+', '', text)
+
 sample = 'café'
 print(sample)
-print(sample)
+print(remove_accented_chars(sample))

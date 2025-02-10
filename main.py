@@ -38,7 +38,7 @@ def fix_spelling(text):
 
 
 # Remove some important words from stopwords list
-deselect_stop_words = ['no', 'not']
+deselect_stop_words = ['no', 'not', 'a', 'the', 'so']
 
 for w in deselect_stop_words:
     nlp.vocab[w].is_stop = False
@@ -70,8 +70,3 @@ def remove_special(text):
 def fix_lengthening(text):
     pattern = re.compile(r"(.)\1{2,}")
     return pattern.sub(r"\1\1", text)
-
-
-sample = 'gooooooooooood'
-print(sample)
-print(fix_lengthening(sample))

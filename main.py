@@ -51,6 +51,6 @@ def fix_lengthening(text):
     return pattern.sub(r"\1\1", text)
 
 
-sample = 'café'
+sample = 'gooooooooooood'
 print(sample)
-print(remove_accented_chars(sample))
+print(fix_lengthening(sample))

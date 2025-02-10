@@ -19,7 +19,6 @@ df['Suicide'] = df['Suicide'].replace({'Potential Suicide post ': 1, 'Not Suicid
 print(df)
 ."""
 # Defining methods
-
 nlp = spacy.load("en_core_web_sm")
 vocab = collections.Counter()
 sym_spell = SymSpell(max_dictionary_edit_distance=2, prefix_length=7)
@@ -38,7 +37,7 @@ def fix_spelling(text):
 
 
 # Remove some important words from stopwords list
-deselect_stop_words = ['no', 'not', 'a', 'the', 'so']
+
 
 for w in deselect_stop_words:
     nlp.vocab[w].is_stop = False

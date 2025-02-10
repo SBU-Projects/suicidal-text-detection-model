@@ -27,3 +27,8 @@ dictionary_path = "Datasets/frequency_dictionary_en_82_765.txt"
 bigram_path = "Datasets/frequency_bigramdictionary_en_243_342.txt"
 sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
 sym_spell.load_bigram_dictionary(bigram_path, term_index=0, count_index=2)
+
+
+def remove_accented_chars(text):
+    text = unidecode.unidecode(text)
+    return text

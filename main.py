@@ -1,16 +1,4 @@
-import os
 import pandas as pd
-import numpy as np
-import spacy
-import unidecode
-import contractions as contract
-import re
-import wordninja
-import collections
-import pkg_resources
-from spellchecker import SpellChecker
-from symspellpy import SymSpell, Verbosity
-
 from DataPreprocessing import DP
 
 # Load dataset

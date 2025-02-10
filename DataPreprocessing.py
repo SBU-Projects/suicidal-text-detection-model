@@ -15,7 +15,8 @@ class DP:
     def __init__(self, dataframe):
         print("Data Preprocessing is activated!")
 
-        self.dataframe = dataframe
+        # Remove rows where the column contains float values
+        self.dataframe = dataframe[~dataframe['Tweet'].apply(lambda x: isinstance(x, float))]
         self.deselect_stop_words = ['no', 'not', 'a', 'the', 'so']
 
         #Defining methods

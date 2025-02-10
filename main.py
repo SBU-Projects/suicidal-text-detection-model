@@ -37,6 +37,10 @@ def remove_accented_chars(text):
 def remove_url(text):
     return re.sub(r'http\S+', '', text)
 
+# Removing symbols and digits
+def remove_symbols_digits(text):
+    return re.sub('[^a-zA-Z\s]', ' ', text)
+
 sample = 'café'
 print(sample)
 print(remove_accented_chars(sample))

@@ -41,6 +41,10 @@ def remove_url(text):
 def remove_symbols_digits(text):
     return re.sub('[^a-zA-Z\s]', ' ', text)
 
+# Removing special characters
+def remove_special(text):
+    return text.replace("\r", " ").replace("\n", " ").replace("    ", " ").replace('"', '')
+
 sample = 'café'
 print(sample)
 print(remove_accented_chars(sample))

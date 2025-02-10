@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="test fix_lengthening">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="all fuctions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739172976882</updated>
-      <workItem from="1739173022539" duration="3937000" />
+      <workItem from="1739173022539" duration="4641000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -176,7 +174,31 @@
       <option name="project" value="LOCAL" />
       <updated>1739176945366</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="test fix_lengthening">
+      <option name="closed" value="true" />
+      <created>1739176981169</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1739176981169</updated>
+    </task>
+    <task id="LOCAL-00014" summary="deselect_stop_words">
+      <option name="closed" value="true" />
+      <created>1739177080450</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1739177080450</updated>
+    </task>
+    <task id="LOCAL-00015" summary="all fuctions">
+      <option name="closed" value="true" />
+      <created>1739177118885</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1739177118885</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,9 +218,11 @@
     <MESSAGE value="remove_special" />
     <MESSAGE value="fix_lengthening" />
     <MESSAGE value="test fix_lengthening" />
-    <option name="LAST_COMMIT_MESSAGE" value="test fix_lengthening" />
+    <MESSAGE value="deselect_stop_words" />
+    <MESSAGE value="all fuctions" />
+    <option name="LAST_COMMIT_MESSAGE" value="all fuctions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739176954801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739177127286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -15,6 +15,8 @@ print(df)
 dp = DP(df)
 
 df['cleaned_text'] = df['Tweet'][:20].apply(lambda row: dp.text_preprocessing(row))
+# Convert all values to strings and handle missing values
+df['cleaned_text'] = df['cleaned_text'].astype(str).fillna('')
 
 
 

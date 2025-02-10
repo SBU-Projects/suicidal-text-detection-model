@@ -28,14 +28,16 @@ import seaborn as sns
 
 # Obtain word frequency
 tokenizer = Tokenizer()
-tokenizer.fit_on_texts(df['cleaned_text'][:100])
+tokenizer.fit_on_texts(df['cleaned_text'])
 word_freq = pd.DataFrame(tokenizer.word_counts.items(), columns=['word', 'count']).sort_values(by='count', ascending=False)
 
+# Remove rows with text length 0
+cleaned_df = df[df['cleaned_text'].apply(lambda x: len(x.split()) != 0)]
+cleaned_df.reset_index(drop=True, inplace=True)
+print(cleaned_df.head())
 
-# Plot bar graph for word frequency
-plt.figure(figsize=(16, 8))
-sns.barplot(x='count',y='word',data=word_freq.iloc[:100])
-plt.title('Most Frequent Words')
-plt.xlabel("Frequency")
-plt.ylabel("Word")
-plt.show()
+
+# Get word count of posts
+posts_len = [len(x.split()) for x in cleaned_df['cleaned_text']]
+pd.Series(posts_len).hist(bins=60)
+print(pd.Series(posts_len).describe())

@@ -45,6 +45,12 @@ def remove_symbols_digits(text):
 def remove_special(text):
     return text.replace("\r", " ").replace("\n", " ").replace("    ", " ").replace('"', '')
 
+# Fix word lengthening (characters are wrongly repeated)
+def fix_lengthening(text):
+    pattern = re.compile(r"(.)\1{2,}")
+    return pattern.sub(r"\1\1", text)
+
+
 sample = 'café'
 print(sample)
 print(remove_accented_chars(sample))

@@ -29,6 +29,27 @@ sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
 sym_spell.load_bigram_dictionary(bigram_path, term_index=0, count_index=2)
 
 
+# Spell Check using Symspell
+def fix_spelling(text):
+    suggestions = sym_spell.lookup_compound(text, max_edit_distance=2)
+    correctedtext = suggestions[
+        0].term  # get the first suggestion, otherwise returns original text if nothing is corrected
+    return correctedtext
+
+
+# Remove some important words from stopwords list
+deselect_stop_words = ['no', 'not']
+
+for w in deselect_stop_words:
+    nlp.vocab[w].is_stop = False
+
+
+# Remove extra whitespaces from text
+def remove_whitespace(text):
+    text = text.strip()
+    return " ".join(text.split())
+
+
 def remove_accented_chars(text):
     text = unidecode.unidecode(text)
     return text

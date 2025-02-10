@@ -36,8 +36,6 @@ cleaned_df = df[df['cleaned_text'].apply(lambda x: len(x.split()) != 0)]
 cleaned_df.reset_index(drop=True, inplace=True)
 print(cleaned_df.head())
 
+# Export cleaned dataset
+cleaned_df.to_csv('Datasets/suicide_detection_final_cleaned.csv', index=False)
 
-# Get word count of posts
-posts_len = [len(x.split()) for x in cleaned_df['cleaned_text']]
-pd.Series(posts_len).hist(bins=60)
-print(pd.Series(posts_len).describe())

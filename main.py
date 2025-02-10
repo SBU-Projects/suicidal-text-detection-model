@@ -9,12 +9,14 @@ df['Suicide'] = df['Suicide'].replace({'Potential Suicide post ': 1, 'Not Suicid
 print(df)
 .
 
+
+
+"""
 dp = DP(df)
 
 df['cleaned_text'] = df['Tweet'][:20].apply(lambda row: dp.text_preprocessing(row))
-print(df[:20])
 
-"""
+
 
 import os
 import pandas as pd
@@ -24,6 +26,14 @@ import seaborn as sns
 
 # Obtain word frequency
 tokenizer = Tokenizer()
-tokenizer.fit_on_texts(df['cleaned_text'])
+tokenizer.fit_on_texts(df['cleaned_text'][:100])
 word_freq = pd.DataFrame(tokenizer.word_counts.items(), columns=['word', 'count']).sort_values(by='count', ascending=False)
 
+
+# Plot bar graph for word frequency
+plt.figure(figsize=(16, 8))
+sns.barplot(x='count',y='word',data=word_freq.iloc[:100])
+plt.title('Most Frequent Words')
+plt.xlabel("Frequency")
+plt.ylabel("Word")
+plt.show()

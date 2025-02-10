@@ -32,3 +32,7 @@ sym_spell.load_bigram_dictionary(bigram_path, term_index=0, count_index=2)
 def remove_accented_chars(text):
     text = unidecode.unidecode(text)
     return text
+
+sample = 'café'
+print(sample)
+print(sample)

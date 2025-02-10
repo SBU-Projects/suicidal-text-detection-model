@@ -22,3 +22,6 @@ print(df)
 ."""
 
 dp = DP(df)
+
+df['cleaned_text'] = df['Tweet'][:20].apply(lambda row: dp.text_preprocessing(row))
+print(df[:20])

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="could" />
+    <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="libs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datasets/Suicide_Ideation_Dataset(Twitter-based).csv" beforeDir="false" afterPath="$PROJECT_DIR$/Datasets/Suicide_Ideation_Dataset(Twitter-based).csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datasets/expand_test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datasets/suicide_detection_final_cleaned.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739172976882</updated>
       <workItem from="1739173022539" duration="11372000" />
-      <workItem from="1739281830204" duration="1920000" />
+      <workItem from="1739281830204" duration="5288000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -398,14 +404,37 @@
       <option name="project" value="LOCAL" />
       <updated>1739283736656</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="could">
+      <option name="closed" value="true" />
+      <created>1739283981851</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1739283981851</updated>
+    </task>
+    <task id="LOCAL-00041" summary="could">
+      <option name="closed" value="true" />
+      <created>1739284033338</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1739284033338</updated>
+    </task>
+    <task id="LOCAL-00042" summary="libs">
+      <option name="closed" value="true" />
+      <created>1739284118378</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1739284118378</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="install libs" />
     <MESSAGE value="add frequency_dictionary_en_82_765" />
     <MESSAGE value="add frequency_bigramdictionary_en_243_342" />
     <MESSAGE value="remove_accented_chars" />
@@ -430,9 +459,10 @@
     <MESSAGE value="expand data libs" />
     <MESSAGE value="expand data libs similar sentences" />
     <MESSAGE value="could" />
-    <option name="LAST_COMMIT_MESSAGE" value="could" />
+    <MESSAGE value="libs" />
+    <option name="LAST_COMMIT_MESSAGE" value="libs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739283749380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739287073286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

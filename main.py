@@ -1,7 +1,7 @@
 import pandas as pd
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
-from DataPreprocessing import DP
+
 
 
 import re
@@ -36,41 +36,87 @@ nlp = spacy.load("en_core_web_lg")
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 
-df = pd.read_csv("Datasets/suicide_detection_final_cleaned.csv")
+
+df = pd.read_csv("Datasets/cleaned.csv")
+
+"""
+from DataPreprocessing import DP
+df = pd.read_csv("Datasets/Suicide_Ideation_Dataset(Twitter-based).csv")
 dp = DP(df)
 df = df[~df['Tweet'].apply(lambda x: isinstance(x, float))]
-df['cleaned_text'] = df['Tweet'][:100].apply(lambda row: dp.text_preprocessing(row))
+df['cleaned_text'] = df['Tweet'].apply(lambda row: dp.text_preprocessing(row))
+df.to_csv('Datasets/cleaned.csv', index=False)
+"""
 
-comment_words = ''
-stopwords = set(STOPWORDS)
 
-# iterate through the csv file
-for val in df.CONTENT:
 
-    # typecaste each val to string
-    val = str(val)
 
-    # split the value
-    tokens = val.split()
+class TextPreprocessor(TransformerMixin):
+    def __init__(self, text_attribute):
+        self.text_attribute = text_attribute
 
-    # Converts each token into lowercase
-    for i in range(len(tokens)):
-        tokens[i] = tokens[i].lower()
+    def transform(self, X, *_):
+        X_copy = X.copy()
+        X_copy[self.text_attribute] = X_copy[self.text_attribute].apply(self._preprocess_text)
+        return X_copy
 
-    comment_words += " ".join(tokens) + " "
+    def _preprocess_text(self, text):
+        return self._lemmatize(self._leave_letters_only(self._clean(text)))
 
-wordcloud = WordCloud(width=800, height=800,
-                      background_color='white',
-                      stopwords=stopwords,
-                      min_font_size=10).generate(comment_words)
+    def _clean(self, text):
+        bad_symbols = '!"#%&\'*+,-<=>?[\\]^_`{|}~'
+        text_without_symbols = text.translate(str.maketrans('', '', bad_symbols))
 
-# plot the WordCloud image
-plt.figure(figsize=(8, 8), facecolor=None)
-plt.imshow(wordcloud)
-plt.axis("off")
-plt.tight_layout(pad=0)
+        text_without_bad_words = ''
+        for line in text_without_symbols.split('\n'):
+            if not line.lower().startswith('from:') and not line.lower().endswith('writes:'):
+                text_without_bad_words += line + '\n'
 
-plt.show()
+        clean_text = text_without_bad_words
+        email_regex = r'([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'
+        regexes_to_remove = [email_regex, r'Subject:', r'Re:']
+        for r in regexes_to_remove:
+            clean_text = re.sub(r, '', clean_text)
+
+        return clean_text
+
+    def _leave_letters_only(self, text):
+        text_without_punctuation = text.translate(str.maketrans('', '', string.punctuation))
+        return ' '.join(re.findall("[a-zA-Z]+", text_without_punctuation))
+
+    def _lemmatize(self, text):
+        doc = nlp(text)
+        words = [x.lemma_ for x in [y for y in doc if not y.is_stop and y.pos_ != 'PUNCT'
+                                    and y.pos_ != 'PART' and y.pos_ != 'X']]
+        return ' '.join(words)
+
+    def fit(self, *_):
+        return self
+
+text_preprocessor = TextPreprocessor(text_attribute='Tweet')
+df_preprocessed = text_preprocessor.transform(df)
+
+train, test = train_test_split(df_preprocessed, test_size=0.3)
+
+#Vectorize data
+tfidf_vectorizer = TfidfVectorizer(analyzer = "word", max_features=10000)
+X_tfidf_train = tfidf_vectorizer.fit_transform(train['Tweet'])
+X_tfidf_test = tfidf_vectorizer.transform(test['Tweet'])
+
+y = train['Suicide']
+y_test = test['Suicide']
+
+X, y = X_tfidf_train, y
+X_test, y_test = X_tfidf_test, y_test
+
+scaler = MinMaxScaler()
+X_norm = scaler.fit_transform(X.toarray())
+X_test_norm = scaler.transform(X_test.toarray())
+
+lsvc = LinearSVC(C=100, penalty='l1', max_iter=500, dual=False)
+lsvc.fit(X_norm, y)
+fs = SelectFromModel(lsvc, prefit=True)
+X_sel = fs.transform(X_norm)
+X_test_sel = fs.transform(X_test_norm)

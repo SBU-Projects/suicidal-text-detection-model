@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1c7c89c-8e69-44d7-b70b-3fda4c430174" name="Changes" comment="expand data libs similar sentences">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739172976882</updated>
       <workItem from="1739173022539" duration="11372000" />
-      <workItem from="1739281830204" duration="674000" />
+      <workItem from="1739281830204" duration="1617000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -376,7 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739282497455</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="expand data libs similar sentences">
+      <option name="closed" value="true" />
+      <created>1739282530041</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1739282530041</updated>
+    </task>
+    <task id="LOCAL-00038" summary="expand data libs similar sentences">
+      <option name="closed" value="true" />
+      <created>1739282615202</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1739282615202</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,6 +428,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="expand data libs similar sentences" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739282290389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/suicidal_text_detection_model$main.coverage" NAME="main Coverage Results" MODIFIED="1739283453590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

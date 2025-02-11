@@ -1,7 +1,9 @@
-import nlpaug.augmenter.word as naw
+import pandas as pd
+from DataPreprocessing import DP
 
-# ایجاد جملات مشابه با استفاده از WordNet
-aug = naw.SynonymAug(aug_src='wordnet')
-sentence = "I love programming in Python"
-similar_sentence = aug.augment(sentence)
-print(similar_sentence)
+df = pd.read_csv("Datasets/suicide_detection_final_cleaned.csv")
+dp = DP(df)
+df = df[~df['Tweet'].apply(lambda x: isinstance(x, float))]
+df['cleaned_text'] = df['Tweet'].apply(lambda row: dp.text_preprocessing(row))
+
+print(df.head())

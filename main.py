@@ -12,7 +12,7 @@ comment_words = ''
 stopwords = set(STOPWORDS)
 
 # iterate through the csv file
-for val in df['cleaned_text'][:100].CONTENT:
+for val in df.CONTENT:
 
     # typecaste each val to string
     val = str(val)

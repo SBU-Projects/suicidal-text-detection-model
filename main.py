@@ -17,7 +17,7 @@ def random_deletion(sentence, p=0.1):
     return ' '.join(remaining)
 
 # مثال استفاده
-sentence = "I love programming in Python"
+sentence = "I want to kill myself"
 similar_sentence = random_insertion(sentence, n=2)
 print(similar_sentence)
 similar_sentence = random_deletion(sentence, p=0.2)
